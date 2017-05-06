@@ -1,0 +1,104 @@
+/* app css stylesheet */
+/* layout */
+
+.body {
+  min-height: 100vh;
+}
+.gap {
+  margin-top: 40px;
+}
+/* Buttons */
+
+.bg-blue {
+  background-color: #0083c7;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('images/bg.jpg');
+}
+.btn.btn-outline {
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 10px 40px;
+  margin-top: 10px;
+  border-radius: 3px;
+  font-size: 15px;
+}
+/* Menu */
+
+#menu {
+  padding: 10px 40px;
+}
+#menu .logo {
+  color: #fff;
+}
+#menu .title {
+  color: #fff;
+  font-size: 4em;
+  margin-bottom: 40px;
+  margin-top: 80px;
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+}
+/* Home */
+
+#home .input-group {
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
+}
+#home input {
+  height: 55px;
+  border: 0;
+  border-radius: 3px;
+  color: #8c8c8c;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 0 20px;
+}
+#home .btn.btn-search {
+  height: 55px;
+  padding: 0px 50px;
+  font-size: 18px;
+  margin-left: 30px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+/* Register */
+
+#register #form-container {
+  background: #2f2f2f;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+#register #form-container .page-header {
+  background: #151515;
+  margin: 0;
+  padding: 30px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+/* numbered buttons */
+
+#register #status-buttons span {
+  color: #FFF;
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* we will style the span as the circled number */
+
+#register #status-buttons span {
+  background: #080808;
+  display: block;
+  height: 30px;
+  margin: 0 auto 10px;
+  padding-top: 5px;
+  width: 30px;
+  border-radius: 50%;
+}
+/* active buttons turn light green-blue*/
+
+#register #status-buttons a.active span {
+  background: #00BC8C;
+}
