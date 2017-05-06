@@ -37,8 +37,15 @@ angular.module('myApp.register', ['ngRoute'])
         //Step 1
         $scope.checkIfAliasAlreadyExists = function () {
             $http.get('http://myalias.herokuapp.com/alias/' + $scope.formData.alias + '/check', null, null).then(function (success) {
+
                     $scope.step = 2;
-                    $scope.showAlreadyExistsAlert = false;
+                    if(success.available){
+                        $scope.step = 2;
+                        $scope.showAlreadyExistsAlert = false;
+                    }
+                    else{
+                        $scope.showAlreadyExistsAlert = true;
+                    }
 
                 }, function (error) {
                     $scope.showAlreadyExistsAlert = true;
@@ -52,8 +59,8 @@ angular.module('myApp.register', ['ngRoute'])
                 $scope.alreadyPressed[socialNetwork] = true;
 
                 $scope.formData.social_accounts.push({
-                    name: socialNetwork,
-                    alias: ''
+                    id: socialNetwork,
+                    username: ''
                 });
             }
         };

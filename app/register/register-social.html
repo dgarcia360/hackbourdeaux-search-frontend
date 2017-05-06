@@ -31,15 +31,15 @@
     </div>
     <div class="row gap">
         <div ng-repeat="social in formData.social_accounts" class="col-md-12 gap-xs">
-            <img class="pull-left" ng-if="social.name == 'twitter'" src="../images/social/twitter.png" ng-click="addRow('twitter')"/>
-            <img class="pull-left" ng-if="social.name == 'facebook'" src="../images/social/facebook.png" ng-click="addRow('facebook')"/>
-            <img class="pull-left" ng-if="social.name == 'github'" src="../images/social/github.png" ng-click="addRow('github')"/>
-            <img class="pull-left" ng-if="social.name == 'instagram'" src="../images/social/instagram.png" ng-click="addRow('instagram')"/>
-            <img class="pull-left" ng-if="social.name == 'bitcoin'" src="../images/social/bitcoin.png" ng-click="addRow('bitcoin')"/>
-            <img class="pull-left" ng-if="social.name == 'nem'" src="../images/social/nem.png" ng-click="addRow('nem')"/>
+            <img class="pull-left" ng-if="social.id == 'twitter'" src="../images/social/twitter.png" ng-click="addRow('twitter')"/>
+            <img class="pull-left" ng-if="social.id == 'facebook'" src="../images/social/facebook.png" ng-click="addRow('facebook')"/>
+            <img class="pull-left" ng-if="social.id == 'github'" src="../images/social/github.png" ng-click="addRow('github')"/>
+            <img class="pull-left" ng-if="social.id == 'instagram'" src="../images/social/instagram.png" ng-click="addRow('instagram')"/>
+            <img class="pull-left" ng-if="social.id == 'bitcoin'" src="../images/social/bitcoin.png" ng-click="addRow('bitcoin')"/>
+            <img class="pull-left" ng-if="social.id == 'nem'" src="../images/social/nem.png" ng-click="addRow('nem')"/>
 
             <div class="pull-left" style="display: block; margin-left: 20px;">
-                <input class="form-control " type="text" ng-model="social.account" placeholder="Account" style="width: 400px; max-width: 100%"/>
+                <input class="form-control " type="text" ng-model="social.username" placeholder="Account" style="width: 400px; max-width: 100%"/>
             </div>
         </div>
     </div>
