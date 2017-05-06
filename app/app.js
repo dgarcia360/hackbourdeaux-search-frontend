@@ -2,15 +2,18 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-  'ngRoute',
+    'ngRoute',
     'puigcerber.countryPicker',
+    'algoliasearch',
+    'algolia.autocomplete',
     'myApp.main',
-  'myApp.home',
-  'myApp.register',
-  'myApp.version',
+    'myApp.home',
+    'myApp.register',
+    'myApp.version',
+
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('');
+    $locationProvider.hashPrefix('');
 
-  $routeProvider.otherwise({redirectTo: '/'});
+    $routeProvider.otherwise({redirectTo: '/'});
 }]);

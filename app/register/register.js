@@ -2,7 +2,7 @@
 
 angular.module('myApp.register', ['ngRoute'])
 
-    .config(['$routeProvider', function($routeProvider) {
+    .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/register', {
             templateUrl: 'register/register.html',
             controller: 'RegisterCtrl',
@@ -11,36 +11,60 @@ angular.module('myApp.register', ['ngRoute'])
         });
     }])
 
-    .controller('RegisterCtrl', ['$scope','$route', function($scope, $route) {
+    .controller('RegisterCtrl', ['$scope', '$route', '$http', function ($scope, $route, $http) {
         $scope.step = 1;
 
         $scope.formData = {};
 
-        $scope.selectedSocialNetworks = [];
+        $scope.formData.social_accounts = [];
 
         $scope.alreadyPressed = {
             'facebook': false,
-            'twitter':false,
+            'twitter': false,
             'github': false,
-            'instagram':false,
+            'instagram': false,
             'bitcoin': false,
             'nem': false
         };
 
-        $scope.changeFormView = function(id){
+        $scope.showNoXEMAlert = false;
+        $scope.showAlreadyExistsAlert = false;
+        $scope.changeFormView = function (id) {
             $scope.step = id;
             console.log($scope.step);
         };
 
-        $scope.addRow = function(socialNetwork){
-            if (!$scope.alreadyPressed[socialNetwork]){
+        //Step 1
+        $scope.checkIfAliasAlreadyExists = function () {
+            $http.get('http://myalias.herokuapp.com/alias/' + $scope.formData.alias + '/check', null, null).then(function (success) {
+                    $scope.step = 2;
+                    $scope.showAlreadyExistsAlert = false;
+
+                }, function (error) {
+                    $scope.showAlreadyExistsAlert = true;
+
+                });
+        }
+        //Step 2
+        $scope.addRow = function (socialNetwork) {
+            if (!$scope.alreadyPressed[socialNetwork]) {
 
                 $scope.alreadyPressed[socialNetwork] = true;
 
-                $scope.selectedSocialNetworks.push({
+                $scope.formData.social_accounts.push({
                     name: socialNetwork,
-                    alias: ''});
+                    alias: ''
+                });
             }
         };
+
+        $scope.register = function () {
+            $http.post('http://myalias.herokuapp.com/alias', $scope.formData, null).then(function (success) {
+                $scope.step = 3;
+            }, function (error) {
+                $scope.showNoXEMAlert = true;
+            });
+        };
+
 
     }]);
