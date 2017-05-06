@@ -12,10 +12,6 @@ angular.module('myApp.home', ['ngRoute'])
     }])
 
     .controller('HomeCtrl', ['$scope','$route', 'algolia', function($scope, $route, algolia) {
-        $scope.$route = $route;
-
-        var client = algoliasearch('RMCV5125OB', '4b1a378a807ba58a68bc2fff73bd6024');
-        var index = client.initIndex('alias');
 
 
         $scope.getDatasets = function() {
