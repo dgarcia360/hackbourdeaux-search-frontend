@@ -7,6 +7,10 @@
 .gap {
   margin-top: 40px;
 }
+
+.gap-xs{
+  margin-top: 20px;
+}
 /* Buttons */
 
 .bg-blue {
@@ -23,6 +27,7 @@
   border-radius: 3px;
   font-size: 15px;
 }
+
 /* Menu */
 
 #menu {
@@ -31,14 +36,16 @@
 #menu .logo {
   color: #fff;
 }
-#menu .title {
+
+
+/* Home */
+#home .title {
   color: #fff;
   font-size: 4em;
   margin-bottom: 40px;
   margin-top: 80px;
   text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
 }
-/* Home */
 
 #home .input-group {
   max-width: 600px;
@@ -63,42 +70,149 @@
   background-color: #fff;
 }
 /* Register */
-
-#register #form-container {
-  background: #2f2f2f;
-  margin-bottom: 20px;
-  border-radius: 5px;
+#register input{
+  border-radius: 0px;
 }
-#register #form-container .page-header {
-  background: #151515;
-  margin: 0;
-  padding: 30px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+/* form styling */
+.wizard {
+  margin: 20px auto;
+  background: #fff;
 }
-/* numbered buttons */
 
-#register #status-buttons span {
-  color: #FFF;
+.wizard .nav-tabs {
+  position: relative;
+  margin: 40px auto;
+  margin-bottom: 0;
+  border-bottom-color: #e0e0e0;
+}
+
+.wizard > div.wizard-inner {
+  position: relative;
+}
+
+.connecting-line {
+  height: 2px;
+  background: #e0e0e0;
+  position: absolute;
+  width: 100%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  z-index: 1;
+}
+
+.wizard .nav-tabs > li.active > a, .wizard .nav-tabs > li.active > a:hover, .wizard .nav-tabs > li.active > a:focus {
+  color: #555555;
+  cursor: default;
+  border: 0;
+  border-bottom-color: transparent;
+}
+
+span.round-tab {
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
   display: inline-block;
-  font-size: 12px;
-  margin-right: 10px;
+  border-radius: 100px;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  z-index: 2;
+  position: absolute;
+  left: 0;
   text-align: center;
-  text-transform: uppercase;
+  font-size: 25px;
 }
-/* we will style the span as the circled number */
-
-#register #status-buttons span {
-  background: #080808;
-  display: block;
-  height: 30px;
-  margin: 0 auto 10px;
-  padding-top: 5px;
-  width: 30px;
-  border-radius: 50%;
+span.round-tab i{
+  color:#555555;
 }
-/* active buttons turn light green-blue*/
+.wizard li.active span.round-tab {
+  background: #fff;
+  border: 2px solid #5bc0de;
 
-#register #status-buttons a.active span {
-  background: #00BC8C;
+}
+.wizard li.active span.round-tab i{
+  color: #5bc0de;
+}
+
+span.round-tab:hover {
+  color: #333;
+  border: 2px solid #333;
+}
+
+.wizard .nav-tabs > li {
+  width: 33.33333333%;
+}
+
+.wizard li:after {
+  content: " ";
+  position: absolute;
+  left: 46%;
+  opacity: 0;
+  margin: 0 auto;
+  bottom: 0px;
+  border: 5px solid transparent;
+  border-bottom-color: #5bc0de;
+  transition: 0.1s ease-in-out;
+}
+
+.wizard li.active:after {
+  content: " ";
+  position: absolute;
+  left: 46%;
+  opacity: 1;
+  margin: 0 auto;
+  bottom: 0px;
+  border: 10px solid transparent;
+  border-bottom-color: #5bc0de;
+}
+
+.wizard .nav-tabs > li a {
+  width: 70px;
+  height: 70px;
+  margin: 20px auto;
+  border-radius: 100%;
+  padding: 0;
+}
+
+.wizard .nav-tabs > li a:hover {
+  background: transparent;
+}
+
+.wizard .tab-pane {
+  position: relative;
+  padding-top: 50px;
+}
+
+.wizard h3 {
+  margin-top: 0;
+}
+.page-header{
+  border-bottom: 0px !important;
+}
+@media( max-width : 585px ) {
+
+  .wizard {
+    width: 90%;
+    height: auto !important;
+  }
+
+  span.round-tab {
+    font-size: 16px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .wizard .nav-tabs > li a {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .wizard li.active:after {
+    content: " ";
+    position: absolute;
+    left: 35%;
+  }
 }

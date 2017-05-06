@@ -18,19 +18,19 @@
 
 <body ng-class="{'bg-blue': ($route.current.activetab == 'home')}" ng-controller="MainCtrl">
 <div id="menu" ng-class="{'bg-blue': ($route.current.activetab != 'home')}" ng-controller="MainCtrl">
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="pull-left">
-        <a href="#"><h2 class="logo">myAlias</h2></a>
-      </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="pull-left">
+          <a href="#"><h2 class="logo">myAlias</h2></a>
+        </div>
 
-      <div class="pull-right">
-        <a href="#/register" class="btn btn-outline">Register</a>
+        <div class="pull-right">
+          <a href="#/register" class="btn btn-outline">Register</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 </div>
 <![endif]-->
@@ -42,6 +42,9 @@
 -->
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
+
+<script src="bower_components/angular-country-picker/country-picker.js"></script>
+
 <script
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="

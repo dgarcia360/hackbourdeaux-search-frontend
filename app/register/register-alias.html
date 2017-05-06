@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!-- form-profile.html -->
+<div class="form-group">
+    <div class="col-md-6">
+        <label>Name</label>
+        <input type="text" class="form-control" ng-model="formData.profile.name" placeholder="Jhon Doe">
+        <label class="gap-xs">ID Number</label>
+        <input type="text" class="form-control" ng-model="formData.profile.idNumber" placeholder="4675432F">
+        <label class="gap-xs">Country</label>
+        <select ng-model="formData.profile.country" pvp-country-picker style="max-width: 100%;"></select>
+    </div>
+    <div class="col-md-6">
+        <label>Alias</label>
+        <input type="text" class="form-control" ng-model="formData.alias" placeholder="jhon">
+    </div>
 
-</body>
-</html>
+    <div class="col-md-12">
+        <button  class="btn btn-block btn-info gap-xs" ng-disabled="!formData.profile.name || !formData.profile.idNumber || !formData.profile.country" ng-click="changeFormView(2)">
+            Continue <span class="glyphicon" ></span>
+        </button>
+    </div>
+</div>

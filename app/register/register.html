@@ -1,26 +1,55 @@
-<div class="row">
-  <div class="col-sm-8 col-sm-offset-2">
-
-    <div id="form-container">
-
+<div id="register" class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
       <div class="page-header text-center">
-        <h2>Alias Register</h2>
+        <div class="wizard">
+          <div class="wizard-inner">
+            <div class="connecting-line"></div>
+            <ul class="nav nav-tabs" role="tablist">
 
-        <!-- the links to our nested states using relative paths -->
-        <!-- add the active class if the state matches our ui-sref -->
-        <div id="status-buttons" class="text-center">
-          <span ng-class="{'active': (step == 1)}"><span>1</span> Alias name</span>
-          <span ng-class="{'active': (step == 1)}"><span>2</span> Social Networks</span>
-          <span ng-class="{'active': (step == 1)}"><span>3</span> Payment</span>
+              <li role="presentation" ng-class="{'active' : step == 1}">
+                  <div>Choose your Alias</div>
+
+                  <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Choose your Alias">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </span>
+                </a>
+              </li>
+
+              <li role="presentation" class="disabled" ng-class="{'active' : step == 2}">
+                  <div>Select your accounts</div>
+
+                  <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Select your services">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-inbox"></i>
+                            </span>
+                </a>
+
+              </li>
+              <li role="presentation"  ng-class="{'active' : step == 3}">
+                  <div>Done!</div>
+
+                  <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                    <span class="round-tab">
+                        <i class="glyphicon glyphicon-ok"></i>
+                    </span>
+                </a>
+
+              </li>
+            </ul>
+          </div>
         </div>
+
       </div>
 
-      <form id="signup-form" ng-submit="processForm()">
-        <div ng-show="step == 1" ng-include src="'register/register-alias.html'"></div>
-        <div ng-show="step == 2" ng-include src="'register/register-payment.html'"></div>
-        <div ng-show="step == 3" ng-include src="'register/register-social.html'"></div>
-      </form>
+        <form id="signup-form">
+          <div ng-show="step == 1" ng-include src="'register/register-alias.html'"></div>
+          <div ng-show="step == 2" ng-include src="'register/register-social.html'"></div>
+          <div ng-show="step == 3" ng-include src="'register/register-done.html'"></div>
+        </form>
 
+      </div>
     </div>
   </div>
 </div>
