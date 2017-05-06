@@ -1,6 +1,8 @@
 /* app css stylesheet */
 /* layout */
-
+.html{
+  height: 100%;
+}
 .body {
   min-height: 100vh;
 }
@@ -18,10 +20,15 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url('images/bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+
 }
 
 .btn.btn-info{
   background-color: #0084c4;
+  border-radius: 0px;
 }
 
 .btn.btn-info:hover{
@@ -247,6 +254,7 @@ span.round-tab:hover {
 .page-header{
   border-bottom: 0px !important;
 }
+
 @media( max-width : 585px ) {
 
   .wizard {
@@ -271,5 +279,22 @@ span.round-tab:hover {
     content: " ";
     position: absolute;
     left: 35%;
+  }
+}
+@media (max-width: 780px){
+  .mobile-gap{
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 992px){
+  .hidden-sm-down{
+    display: none;
+  }
+}
+
+@media(min-width: 992px){
+  .input-service{
+    width: 400px;
   }
 }
