@@ -37,9 +37,7 @@ angular.module('myApp.register', ['ngRoute'])
         //Step 1
         $scope.checkIfAliasAlreadyExists = function () {
             $http.get('http://myalias.herokuapp.com/alias/' + $scope.formData.alias + '/check', null, null).then(function (success) {
-
-                    $scope.step = 2;
-                    if(success.available){
+                    if(success.data.available){
                         $scope.step = 2;
                         $scope.showAlreadyExistsAlert = false;
                     }

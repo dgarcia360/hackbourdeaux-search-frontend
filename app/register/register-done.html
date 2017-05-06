@@ -12,7 +12,7 @@
         <p><b>Name:</b> {{formData.profile.name}}</p>
         <p><b>ID:</b> {{formData.profile.idnumber}}</p>
         <p><b>Country:</b> {{formData.profile.country}}</p>
-        <h3 class="gap-xs">Registrant Details</h3>
+        <h3 class="gap-xs">Related Services</h3>
 
         <div ng-repeat="social in formData.social_accounts" class="col-md-12 gap-xs">
             <img class="pull-left" ng-if="social.id == 'twitter'" src="../images/social/twitter.png" ng-click="addRow('twitter')"/>
