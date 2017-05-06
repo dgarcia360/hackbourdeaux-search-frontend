@@ -22,9 +22,17 @@ angular.module('myApp.home', ['ngRoute'])
           $scope.$watch('search.query', function() {
             index.search($scope.search.query)
               .then(function searchSuccess(content) {
-                console.log(content);
+                // console.log(content);
                 // add content of search results to scope for display in view
-                $scope.search.hits = content.hits;
+                let autocompleteElements = []
+                for(let hit of content.hits) {
+                    let elem = {};
+                    elem.alias = hit.alias;
+                    elem.social_accounts = hit.social_accounts;
+                    autocompleteElements.push(elem);
+                }
+                console.log(autocompleteElements);
+                $scope.search.hits = autocompleteElements;
               }, function searchFailure(err) {
                 console.log(err);
             });

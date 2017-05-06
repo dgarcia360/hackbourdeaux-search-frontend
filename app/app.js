@@ -5,6 +5,7 @@ angular.module('myApp', [
     'ngRoute',
     'puigcerber.countryPicker',
     'algoliasearch',
+    'ngSanitize',
     'algolia.autocomplete',
     'myApp.main',
     'myApp.home',

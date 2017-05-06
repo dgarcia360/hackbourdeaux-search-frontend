@@ -15,9 +15,10 @@
                     </div>
                         <h1>Results</h1>
     <div class="hit" ng-repeat="hit in search.hits">
-      <div class="attribute" ng-repeat="(attribute,v) in hit._highlightResult">
-        <span>{{ attribute }}: </span>
-        <span ng-bind-html="v.value"></span>
+      <span ng-bind-html="hit.alias"></span>
+      <div class="social_account" ng-repeat="social_account in hit.social_accounts">
+        <span ng-bind-html="social_account.id"></span>
+        <span ng-bind-html="social_account.username"></span>
       </div>
     </div>
 
