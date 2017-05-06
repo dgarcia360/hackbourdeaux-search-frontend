@@ -18,21 +18,19 @@
 
 <body ng-class="{'bg-blue': ($route.current.activetab == 'home')}" ng-controller="MainCtrl">
 <div id="menu" ng-class="{'bg-blue': ($route.current.activetab != 'home')}" ng-controller="MainCtrl">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="pull-left">
-          <a href="#/"><h2 class="logo">myAlias</h2></a>
-        </div>
 
-        <div class="pull-right">
-          <a href="#/register" class="btn btn-outline">Register</a>
-        </div>
-      </div>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="#/"><h2 class="logo">myAlias</h2></a>
     </div>
-  </div>
-
+    <ul class="nav navbar-nav navbar-right">
+      <li><a class="white-link" href="../about">What We Do</a></li>
+      <li><a href="#/register" class="btn btn-outline">Register</a></li>
+    </ul>
+  </div><!--/.nav-collapse -->
 </div>
+
+
 <![endif]-->
 
 <div ng-view></div>
