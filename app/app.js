@@ -9,6 +9,7 @@ angular.module('myApp', [
     'algolia.autocomplete',
     'myApp.main',
     'myApp.home',
+    'myApp.about',
     'myApp.register',
     'myApp.version',
 
